@@ -29,9 +29,12 @@ from either ArXiv or Semantic Scholar, loading local files (for debugging), or
 mining Semantic Scholar's datadump.
 
 Files:
+
 ```dag.py```: File containing the DAG object. (TODO)
+
 ```query.py```: File containing functions which query both Semantic Scholar and
 ArXiv. (Also contains a function which loads local files.) (TODO)
+
 (Right now I'm not planning to mine the datadump, but it's always an option.) 
 
 ### 2. Pruning DAG
@@ -40,10 +43,12 @@ displayed based on importance or for trying to understand clusters of papers
 within the knowledge graph.
 
 Files:
+
 ```prune.py```: Functions for pruning the DAG based on importance. Depending
 on memory, some of this functionality may need to be moved to section 1. I 
 envision both pre-pruning to reduce the size of the DAG but also this
 post-pruning so the viewer can determine how much detail they want. (TODO)
+
 ```process.py```: Algorithms to process the DAG. If doing data analysis, the 
 pipeline stops here, as there's nothing to display. (TODO)
 
@@ -52,7 +57,9 @@ Objective: Display the DAG. Should support both a basic printing display as
 well as a more complex Tkinter graphics display.
 
 Files:
+
 ```print_display.py```: Functions for printing the DAG via commandline. (TODO)
+
 ```visual_display.py```: Functions for displaying the DAG via tkinter. 
 Eventually, I want this to be a website which uses Javascript for the ability
 to interact. However, the prototype should be in tkinter. (TODO)
