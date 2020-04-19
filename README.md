@@ -21,7 +21,7 @@ parses the data.
 ## Planned Structure
 The structure of this tool will be divided up into three layers, parsing data, 
 pruning the DAG, and displaying papers. To run anything, there should be
-```main.py```. (TODO)
+```main.py```. (WIP)
 
 ### 1. Parsing Data
 Objective: get the data and return it as a DAG object. Options include querying
@@ -30,10 +30,12 @@ mining Semantic Scholar's datadump.
 
 Files:
 
-```dag.py```: File containing the DAG object. (TODO)
+```paper.py```: File containing the Paper dag object. Currently contains 
+rudimentary display functionality via printing. Might move querying here as
+well, it would make things easeir. (WIP)
 
 ```query.py```: File containing functions which query both Semantic Scholar and
-ArXiv. (Also contains a function which loads local files.) (TODO)
+ArXiv. (Also contains a function which loads local files.) (WIP)
 
 (Right now I'm not planning to mine the datadump, but it's always an option.) 
 
@@ -57,8 +59,6 @@ Objective: Display the DAG. Should support both a basic printing display as
 well as a more complex Tkinter graphics display.
 
 Files:
-
-```print_display.py```: Functions for printing the DAG via commandline. (TODO)
 
 ```visual_display.py```: Functions for displaying the DAG via tkinter. 
 Eventually, I want this to be a website which uses Javascript for the ability
