@@ -64,5 +64,14 @@ Files:
 Eventually, I want this to be a website which uses Javascript for the ability
 to interact. However, the prototype should be in tkinter. (TODO)
 
+## TODO (Notes):
+1. Do querying recursively?
+
+2. Sparse loading
+
+3. Start pruning!
+
+
+
 ## Acknowledgements:
 The semantic scholar data is from https://www.semanticscholar.org/.

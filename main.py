@@ -1,6 +1,6 @@
 import argparse
 from query import Query
-
+from utils import *
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()     
@@ -14,5 +14,8 @@ if __name__ == '__main__':
     q = Query()
     doi = "10.1080/00224490902775827"
     starting_node = q.query_semantic_scholar(doi, 2, forward=False)
-    
-    starting_node.display(0, 2, forward=False)
+   
+    save(starting_node, "work!")
+    x = load("work!")
+ 
+    x.display(0, 2, forward=False)

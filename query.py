@@ -12,6 +12,7 @@
 
 import json
 from paper import Paper
+import pickle as pkl
 import urllib.request 
 
 class Query:
