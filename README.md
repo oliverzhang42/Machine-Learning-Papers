@@ -31,8 +31,7 @@ mining Semantic Scholar's datadump.
 Files:
 
 ```paper.py```: File containing the Paper dag object. Currently contains 
-rudimentary display functionality via printing. Might move querying here as
-well, it would make things easeir. (WIP)
+rudimentary display functionality via printing. . (WIP)
 
 ```query.py```: File containing functions which query both Semantic Scholar and
 ArXiv. (Also contains a function which loads local files.) (WIP)
