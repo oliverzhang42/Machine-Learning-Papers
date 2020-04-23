@@ -1,5 +1,5 @@
 import argparse
-from pruning import prune_by_number
+from pruning import prune_by_number, prune_by_percentage, get_count
 from query import Query
 from utils import *
 
@@ -25,5 +25,6 @@ if __name__ == '__main__':
     print("")
     print("")
 
-    p = prune_by_number(x, 1, forward=False)
+    p = prune_by_percentage(x, 0.5, forward=False)
+    c = get_count(p, [], citation=False)
     p.display(0, 2, forward=False)

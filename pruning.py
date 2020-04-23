@@ -50,8 +50,47 @@ def prune_by_number(dag, threshold, forward=True):
     return dag
 
 
+def get_count(dag, seen, citation=True):
+    '''
+    Counts the number of citations/references in each paper in the dag.
+
+    (Paper) dag: the start of the DAG which you want to count.
+    (list) seen: a list of the titles of papers which you've already seen.
+                 This must be kept track of because there can be more than
+                 one path to a paper.
+    (bool) citation: whether to count citations or references. 
+    '''
+
+    if dag.title in seen:
+        return None
+
+    seen.append(dag.title)
+
+    if citation:
+        children = dag.outputs
+    else:
+        children = dag.inputs
+
+    count = [len(children)]
+
+    for paper in children:
+        c = get_count(paper, seen, citation=citation)
+        if type(c) == list:
+            count += c
+
+    return count
+
+
 def prune_by_percentage(dag, keep_percent, forward=True):
     '''
     prunes a DAG by keeping only keep_percent of the nodes.
     '''
-    pass
+    counts = get_count(dag, [], citation=forward)
+    counts.sort(reverse=True)
+
+    threshold_index = int(keep_percent * len(counts))
+    
+    threshold = counts[threshold_index] + 1
+    dag = prune_by_number(dag, threshold, forward=forward)
+
+    return dag
